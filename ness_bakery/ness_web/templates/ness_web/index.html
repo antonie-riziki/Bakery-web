@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% block content %}
+
+{% load static %}
+
+<Style>
+
+  .card:hover {
+    transform:scale(1.1);
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+  }
+
+
+  .fa-facebook {
+    padding: 20px;
+    font-size: 60px;
+    width: 57px;
+    margin: 5px 2px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-twitter {
+    padding: 20px;
+    font-size: 30px;
+    width: 57px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+    margin: 5px 2px;
+  }
+
+  .fa-twitter {
+    padding-left: -20px;
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-google {
+    padding: 20px;
+    font-size: 30px;
+    width: 57px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+    margin: 5px 2px;
+  }
+
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+
+  .fa-instagram {
+    padding: 20px;
+    font-size: 30px;
+    width: 57px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+    margin: 5px 2px;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+
+  .fa-snapchat-ghost {
+    padding: 20px;
+    font-size: 30px;
+    width: 57px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+    margin: 5px 2px;
+  }
+
+  .fa-snapchat-ghost {
+    background: #fffc00;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+  .fa-youtube {
+    padding: 20px;
+    font-size: 30px;
+    width: 57px;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 60%;
+  }
+
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+
+  .fa-shopping-cart {
+    float: left;
+    padding: 5px;
+    width: 35px;
+    vertical-align: left;
+
+  }
+
+  .card-testimony {
+    min-width: 300px;
+    width: 1450px;
+    height: auto;
+    border-radius: 15px;
+    margin: 50 auto;
+    padding: -1s0px 50px;
+    color: #008080;
+
+  }
+
+  .phone {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .thumbnails {
+    padding-left: -20px;
+
+  }
+
+    .card-img {
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+     height: 350px;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .card img {
+    width: 100%;
+    height: 50%;
+    object-fit:cover;
+  }
+
+  .card {
+    margin:13px;
+    height: 320px;
+  }
+
+  .carousel-wrapper{
+    margin-top:15px;
+  }
+
+  .card-body{
+    padding:10px;
+  }
+
+  .card-body < button {
+    display: none;
+  }
+
+  .card-body:hover < button {
+      transform:scale(1.1);
+      display: block;
+    }
+
+
+  #buy-btn {
+    border: 1px solid black;
+    background-color: transparent;
+  }
+
+
+</Style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ness Cakes</title>
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/floating-wpp.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/floating-wpp.min.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.bxslider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+
+
+    <!--<link id="callCss" rel="stylesheet" href="themes/bootshop/bootstrap.min.css" media="screen"/>-->
+    <!--<link href="{% static 'base.css' %}" rel="stylesheet" media="screen"/>-->
+    <!-- Bootstrap style responsive -->
+    <link href="{% static 'css/bootstrap-responsive.min.css' %}" rel="stylesheet"/>
+    <!--<link href="{% static 'css/bootstrap1.min.css' %}" rel="stylesheet"/>-->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+    <!-- Google-code-prettify -->
+    <!--<link href="themes/js/google-code-prettify/prettify.css' %}" rel="stylesheet"/>-->
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <!--<link href="themes/6/js-image-slider.css" rel="stylesheet" type="text/css"/>
+    <script src="themes/6/mcVideoPlugin.js" type="text/javascript"></script>
+    <script src="themes/6/js-image-slider.js" type="text/javascript"></script>-->
+
+    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+
+</head>
+
+<body>
+<section>
+  <section>
+  <div class="elfsight-app-d6bd5088-34c9-4210-964b-0000cc3f223a"></div>
+    <div class="loader"></div>
+      <div id="myDiv1">
+        <!--HEADER-->
+        <div class="header">
+          <div class="bg-color">
+            <header id="main-header">
+              {% include 'ness_web/navbar.html' %}
+            </header>
+            <div class="wrapper">
+              <div class="container">
+                <div class="row">
+                  <div class="banner-info text-center wow fadeIn delay-05s">
+                    <h1 class="bnr-title">We are Bakers</h1>
+                    <h2 class="bnr-sub-title">The home of fresh baking!!</h2>
+                    <p class="bnr-para">Ness cakes is an establishment that produces and sells flour-based food baked in an oven such as bread, cakes, pastries, and pies.
+                      <br> Flour confectionery includes principally sweet pastries, cakes, and similar baked goods.<br>Sugar confectionery includes sweets, candied nuts, chocolates, pastillage, and other confections that are made primarily of sugar.
+                      <br>Chocolate confections are treated as a separate category, as are sugar-free versions of sugar confections.</p>
+                    <div class="brn-btn">
+                      <a href="#blog" class="btn btn-download">Order now!</a>
+                      <!--<a href="#" class="btn btn-more">Learn More</a>-->
+                    </div>
+                    <div class="overlay-detail">
+                      <a href="#feature"><i class="fa fa-angle-down"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/ HEADER-->
+        <!---->
+        <section id="feature" class="section-padding wow fadeIn delay-05s">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                  <div class="item-img">
+                    <img src="{% static 'admin/img/ser01.png' %}">
+                  </div>
+                  <h3 class="pad-bt15">Creative Concept</h3>
+                  <p>Ness Bakery will provide its clients with fresh-baked artisan breads, cakes and cookies on a daily basis.
+                    All breads are scratch-made from locally sourced ingredients for efforts to maintain sensitivity to special diets..</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                  <div class="item-img">
+                    <img src="{% static 'img/ser02.png' %}">
+                  </div>
+                  <h3 class="pad-bt15">Amazing Design</h3>
+                  <p>Fresh bread. Soft doughnuts. Pies with just the right balance of sweetness and tartness.
+                      Do those words make your mouth water, and your heart ache?.
+                    We bake memories. We focus on customer satisfaction making the best cakes in town. </p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                  <div class="item-img">
+                    <img src="{% static 'img/ser03.png' %}">
+                  </div>
+                  <h3 class="pad-bt15">Cost effective</h3>
+                  <p>Obviously Quality is the primary thing but getting a taste of your penny can really spice your mood. Enjoy affordable products that your pockets buy.</p>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="wrap-item text-center">
+                  <div class="item-img">
+                    <img src="{% static 'img/leading.png' %}">
+                  </div>
+                  <h3 class="pad-bt15">Leading</h3>
+                  <p>We are proud to say we are among the leading bakeries in the city. Enjoy our Mouthwatering taste, exceptional service.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!---->
+        <!---->
+        <section id="service" class="section-padding wow fadeInUp delay-05s">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h2 class="service-title pad-bt15">What We Do?</h2>
+                <p class="sub-title pad-bt15">For freshly baked cakes<br>baby showers, birthdays, graduations and weddings.</p>
+                <hr class="bottom-line">
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="service-item">
+                  <h3><span>S</span>pecial Occasions</h3>
+                  <p>such as weddings, anniversaries, birthday parties, business networking events.</p>
+                  <a href="">learn more...</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="service-item">
+                  <h3><span>C</span>ustomized Baked Products</h3>
+                  <p>for people who have allergies or sensitivities to certain foods (such as nuts, peanuts, dairy or gluten).</p>
+                  <a href="">learn more...</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="service-item">
+                  <h3><span>C</span>ake Designs</h3>
+                  <p>such as sheet cakes, layer cakes, wedding cakes, tiered cakes.</p>
+                  <a href="">learn more...</a>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="service-item">
+                  <h3><span>Q</span>uality Service</h3>
+                  <p>Meeting customer needs beyond expectation is our virtue as we get recommendation from our clients friends, relatives, colleagues and family.</p>
+                  <a href="">Learn more...</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h2 class="service-title pad-bt15">Our Recent Works</h2>
+                <p class="sub-title pad-bt15">We Like to Bake and it Shows.</p>
+                <p class="sub-title pad-bt15">Take a look at some of our precious works. We cherish you this much and beyond</p>
+                <hr class="bottom-line">
+              </div>
+             {% for port in get_portfolio %}
+              <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+                <figure>
+                  <img src="{% static port.portfolio_image %}" class="img-responsive" style="width:830px;height:350px;">
+                  <figcaption>
+                    <h2>{{ port.project_name }}</h2>
+                    <p>{{ port.description }}.</p>
+                  </figcaption>
+                </figure>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+        <!---->
+        <!---->
+        <!-- Testimonial -->
+        <h2 class="service-title pad-bt15" style="color:#67696c; text-align:center;">Testimonial</h2>
+        <hr class="bottom-line">
+        <div id="testimonial" class="wow fadeInUp delay-05s">
+        <div class="bg-testicolor">
+          <div class="container section-padding">
+            <div class="row">
+              <div class="testimonial-item">
+                <div class="col-md-20 mb-3">
+                  <div class="card-testimony">
+                    <div class="card-body">
+                      <section class="col-lg-10 offset-lg-1 pt-5 pb-5 bg-dark text-light">
+                        <section id="client-testimonial-carousel" class="carousel slide" data-ride="carousel" style="height:100px;">
+                          <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active text-center p-4">
+                              <blockquote class="blockquote text-right" style="font-size:18px;">
+                                {% for i in get_testimony %}
+                                <p class="mb-0"><i class="fa fa-quote-left"></i> {{ i.customer_testimony }}.
+                                </p>
+                                <footer class="blockquote-footer" style="color: #008080; font-size:16px;">{{ i.customer_name }}, <cite title="Source Title">Client</cite></footer>
+                                <!-- Client review stars -->
+                                <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                <p class="client-review-stars">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-half-alt"></i>
+                                  <i class="fa fa-star"></i>
+                                </p>
+                              </blockquote><br>
+                            </div>
+                            <div class="carousel-item deactive text-center p-4">
+                              <blockquote class="blockquote text-center" style="font-size:18px;">
+                                <p class="mb-0"><i class="fa fa-quote-left" ></i> {{ i.customer_testimony }}
+                                </p>
+                                <footer class="blockquote-footer" style="color: #008080; font-size:16px;">{{ i.customer_name }}, <cite title="Source Title"> Cake Lover </cite></footer>
+                                <!-- Client review stars -->
+                                <!-- "fas fa-star" for a full star, "far fa-star" for an empty star, "far fa-star-half-alt" for a half star. -->
+                                <p class="client-review-stars">
+                                  <i class="fa fa-star" aria-hidden="true"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                </p>
+                              </blockquote>
+                               {% endfor %}
+                            </div>
+                          </div>
+                        </section>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+
+        <!-- End of Testimonial -->
+
+        <!---->
+
+        <section id="blog" class="section-padding wow fadeInUp delay-05s">
+          <section class="container">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h2 class="service-title pad-bt15">Latest from our blog</h2>
+                <p class="sub-title pad-bt15">Check out our amazing projects that spark awesome to our clients<br><p style="font-family: 'Brush Script MT'; font-size:28px;">Its my party and i'll cry if i want to.</p>
+                <hr class="bottom-line">
+              </div>
+            </div>
+
+              <!--- CAROUSEL --->
+
+              <!-- Graduation Section -->
+              <section id="grad-cake" class="grad-cake">
+              <div class="grad-cake">
+                <div class="container">
+                  <div class="row">
+                    <button type="button" class="btn btn-primary" style="padding-right:1000px; margin-top:40px; margin-bottom:-10px;">
+                      Graduation Cakes <span class="badge badge-light"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                      <span class="sr-only">Graduation Cakes</span>
+                    </button>
+                    <div class="carousel-wrapper">
+                      <div class="carousel" data-flickity='{ "freeScroll": true, "cellAlign": "left" }'>
+                        {% for i in get_gc %}
+                        <div class="carousel-cell">
+                          <div class="row">
+                            <div class="col-sm-6">
+                              <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="{% static i.image %}" alt="Card image cap">
+                                <div class="card-body" style="align-content:center;">
+                                  <!--<h5 class="card-title">{{ i.prod_category }}</h5>-->
+                                  <p class="card-text" style="font-family: Arial, Times, sans-serif;"><strong>{{ i.description }}.</strong></p>
+                                  <h5 class="card-price" style="font-family: Arial, Times, sans-serif; color:black">Ksh. {{ i.price }}.00</h5><br>
+                                  <div class="text-center">
+                                    <button type="button" id="buy-btn" class="btn btn-default" style="color:green;", href="mpesa_api/access_token.py">Add to cart</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </section>
+
+
+            <!-- End Graduation Section -->
+
+            <!--Themed Cakes -->
+          <section class="themed-cake">
+            <div class="container">
+              <div class="row">
+                <button type="button" class="btn btn-primary" style="padding-right:1020px; margin-top:40px; margin-bottom:-10px;">
+                  Themed Cakes <span class="badge badge-light"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+                  <span class="sr-only">Themed Cakes</span>
+                </button>
+                <div class="carousel-wrapper">
+                  <div class="carousel" data-flickity='{ "freeScroll": true, "cellAlign": "left"}'>
+                    {% for i in get_product %}
+                    <div class="carousel-cell">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{% static i.prod_img %}" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text" style="font-family: Arial, Times, sans-serif; font-size: 15px;"><strong>{{ i.prod_name }}</strong></p>
+                              <!--<p class="card-text">{{ i.prod_category }}.</p>-->
+                              <h5 class="card-price" style="font-family: Arial, Times, sans-serif; color:black">Ksh.{{ i.prod_price }}</h5>
+                              <div class="text-center">
+                                <button type="button" id="buy-btn" class="btn btn-default" style="color:green;">Add to cart</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        <!-- End Themed Cakes -->
+
+        <!-- Birthday Cake -->
+          <section class="birthday-cakes">
+            <div class="container">
+              <div class="row">
+                <button type="button" class="btn btn-primary" style="padding-right:1020px; margin-top:40px; margin-bottom:-10px;">
+                  Birthday Cakes <span class="badge badge-light"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+                  <span class="sr-only">Birthday Cakes</span>
+                </button>
+                <div class="carousel-wrapper">
+                  <div class="carousel" data-flickity='{ "freeScroll": true, "cellAlign": "left"}'>
+                    {% for i in get_product %}
+                    <div class="carousel-cell">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{% static i.prod_img %}" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text" style="font-family: Arial, Times, sans-serif; font-size: 15px;"><strong>{{ i.prod_name }}</strong></p>
+                              <h5 class="card-price" style="font-family: Arial, Times, sans-serif; color:black">Ksh.{{ i.prod_price }}</h5>
+                              <div class="text-center">
+                                <button type="button" id="buy-btn" class="btn btn-default" style="color:green;">Add to cart</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!-- End Birthday Cake -->
+
+        <!-- Baby Shower -->
+        <section class="baby-shower">
+          <div class="container">
+            <div class="row">
+              <button type="button" class="btn btn-primary" style="padding-right:990px; margin-top:40px; margin-bottom:-10px;">
+                Baby Shower Cakes <span class="badge badge-light"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+                <span class="sr-only">Baby Shower Cakes</span>
+              </button>
+              <div class="carousel-wrapper">
+                <div class="carousel" data-flickity='{ "freeScroll": true, "cellAlign": "left"}'>
+                  {% for i in get_product %}
+                  <div class="carousel-cell">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="card" style="width: 18rem;">
+                          <img class="card-img-top" src="{% static i.prod_img %}" alt="Card image cap">
+                          <div class="card-body">
+                            <p class="card-text" style="font-family: Arial, Times, sans-serif; font-size: 15px;"><strong>{{ i.prod_name }}</strong></p>
+                            <h5 class="card-price" style="font-family: Arial, Times, sans-serif; color:black">Ksh.{{ i.prod_price }}</h5>
+                            <div class="text-center">
+                              <button type="button" id="buy-btn" class="btn btn-default" style="color:green;">Add to cart</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Baby Shower -->
+
+          <!-- Wedding -->
+          <section class="wedding-cakes">
+            <div class="container">
+              <div class="row">
+                <button type="button" class="btn btn-primary" style="padding-right:1020px; margin-top:40px; margin-bottom:-10px;">
+                  Wedding Cakes <span class="badge badge-light"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+                  <span class="sr-only">Wedding Cakes</span>
+                </button>
+                <div class="carousel-wrapper">
+                  <div class="carousel" data-flickity='{ "freeScroll": true, "cellAlign": "left"}'>
+                    {% for i in get_wc %}
+                    <div class="carousel-cell">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{% static i.image %}" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text" style="font-family: Arial, Times, sans-serif; font-size: 15px;"><strong>{{ i.prod_name }}</strong></p>
+                              <h5 class="card-price" style="font-family: Arial, Times, sans-serif; color:black">Ksh.{{ i.prod_price }}</h5>
+                              <div class="text-center">
+                                <button type="button" id="buy-btn" class="btn btn-default" style="color:green;">Add to cart</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Wedding Cakes -->
+
+          <!-- Cupcakes -->
+
+          <section class="cup-cakes">
+            <div class="container">
+              <div class="row">
+                <button type="button" class="btn btn-primary" style="padding-right:1050px; margin-top:40px; margin-bottom:-10px;">
+                  Cup Cakes <span class="badge badge-light"><i class="fa fa-birthday-cake" aria-hidden="true"></i></span>
+                  <span class="sr-only">Cup Cakes</span>
+                </button>
+                <div class="carousel-wrapper">
+                  <div class="carousel" data-flickity='{ "freeScroll": true, "cellAlign": "left"}'>
+                    {% for i in get_product %}
+                    <div class="carousel-cell">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="{% static i.prod_img %}" alt="Card image cap">
+                            <div class="card-body">
+                              <p class="card-text" style="font-family: Arial, Times, sans-serif; font-size: 15px;"><strong>{{ i.prod_name }}</strong></p>
+                              <h5 class="card-price" style="font-family: Arial, Times, sans-serif; color:black">Ksh.{{ i.prod_price }}</h5>
+                              <div class="text-center">
+                                <button type="button" id="buy-btn" class="btn btn-default" style="color:green;">Add to cart</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        </section>
+
+          <!-- End Cupcakes -->
+
+        <!---->
+        <!--- END CAROUSEL -->
+
+        <section id="contact" class="section-padding wow fadeInUp delay-05s">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-md-12 text-center white">
+                <h2 class="service-title pad-bt15">Keep in touch with us</h2>
+                <p class="sub-title pad-bt15">Send us your Feedback, Requests, Comments and Compliments<br> We like to hear from you.</p>
+                <hr class="bottom-line white-bg">
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="loction-info white">
+                  <p><i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>Buruburu Shoppie Phase 3 <br>Nairobi,</p>
+                  <p><i class="fa fa-envelope-o fa-fw pull-left fa-2x"></i>nesscakes@gmail.com</p>
+                  <p class="phone"><a href="tel:0703110280" style="color:white;"><i class="fa fa-phone fa-fw pull-left fa-2x"></i>+254 7031 10280</a></p>
+                  <br>
+                  <p class="sub-title pad-bt15" >Remember to share the taste.</p>
+                </div>
+
+                <!-- Section: Social media -->
+                  <section class="mb-4">
+                    <!-- Facebook -->
+                    <a href="https://web.facebook.com/NESS-CAKES-399090940261089/?ref=page_internal" class="fa fa-facebook fa-lg" target="_blanks"></a>
+
+                    <!-- Twitter -->
+                    <a href="#"  class="fa fa-twitter fa-lg" target="_blanks"></a>
+
+                    <!-- Google -->
+                    <a href="#"  class="fa fa-google fa-lg" target="_blanks"></a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/ness_cakes/" class="fa fa-instagram fa-lg" target="_blanks"></a>
+
+                    <!-- Snapchat -->
+                    <a href="#" class="fa fa-snapchat-ghost fa-lg" target="_blanks"></a>
+
+                    <!-- You Tube -->
+                    <a href="#" class="fa fa-youtube fa-lg" target="_blanks"></a>
+
+                   </section>
+                   <!-- Section: Social media -->
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="contact-form">
+                  <div id="sendmessage">Your message has been sent. Thank you! Every flavor has a story </div>
+                  <div id="errormessage">Kindly confirm details provided</div>
+                  <form action="" method="post" role="form" class="contactForm">
+                    <div class="col-md-6 padding-right-zero">
+                      <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <div class="validation"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div class="validation"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                        <div class="validation"></div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                        <div class="validation"></div>
+                      </div>
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-primary btn-submit">SEND NOW</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!---->
+        <!---->
+        {% include 'ness_web/footer.html' %}
+        <!---->
+      <!-- </div> -->
+        <div id="myDiv"></div>
+
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'js/wow.js' %}"></script>
+      <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
+      <script src="{% static 'contactform/contactform.js' %}"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </section>
+</section>
+</body>
+  <!--<script type="text/javascript">
+    $(function () {
+      $('#myDiv').floatingWhatsApp({
+        phone: '0743158232'
+        showPopup: 'True'
+      });
+    });
+  </script>-->
+</html>
+
+{% endblock %}
